@@ -1,0 +1,58 @@
+/* Estilo para o header */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+/* Estilo para as cards de produtos */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.product-card img {
+    border-bottom: 1px solid #ddd;
+}
+
+.product-card .card-body {
+    text-align: center;
+}
+
+/* Estilo para a página principal */
+.container {
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
+}

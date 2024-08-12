@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Loja de Roupas</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/carrinho">Carrinho</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Carrinho</h2>
+        <ul class="list-group">
+            {% for item in itens_carrinho %}
+            <li class="list-group-item">
+                {{ item.produto.nome }} - R$ {{ item.produto.preco }} x {{ item.quantidade }}
+                <a href="{{ url_for('remover_do_carrinho', produto_id=item.produto.id) }}" class="btn btn-danger btn-sm float-right">Remover</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Loja de Roupas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
